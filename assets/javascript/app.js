@@ -20,12 +20,15 @@ var game = {
     ],
 
     showQuestions: function() {
+        $("#start").css("display", "none");
+        $("#question").css("display", "block");
         for(var i = 0; i < this.questions.length; i++) {
             var question = $("<div>");
             var questionText = $("<h2>");
             $(questionText).text(this.questions[i].question);
             $(question).append(questionText);
             var form = $("<form>");
+            $(form).attr("id", i);
             for(var j = 0; j < 4; j++){
                 if(this.questions[i].choices[j] !== "") {
                     var answer = $("<input>");
@@ -41,13 +44,34 @@ var game = {
             $(question).append(form);
             $("#question").append(question);
         }
+        var submitButton = $("<button>");
+        $(submitButton).attr("id", "submit");
+        $(submitButton).text("Submit Quiz");
+        $("#question").append(submitButton);
+
+        $("#submit").on("click", function() {
+            for(var i = 0; i < game.questions.length; i++) {
+                var answer = $("input[name=answer]:checked", "#"+i).val();
+                answer = parseInt(answer);
+                //console.log(answer);
+                var correctAnswer = game.questions[i].answer;
+                //console.log(correctAnswer);
+
+                if(answer === correctAnswer) {
+                    game.correct++;
+                } else {
+                    game.incorrect++;
+                }
+            }
+
+            //console.log("Correct: " + game.correct);
+            //console.log("Incorrect: " + game.incorrect);
+        });
     }
         
 };
 
 function showQuestions() {
-    $("#start").css("display", "none");
-    $("#question").css("display", "block");
     game.showQuestions();
 }
 
