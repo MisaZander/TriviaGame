@@ -1,3 +1,5 @@
+var timerID;
+
 var game = {
     correct: 0,
     incorrect: 0,
@@ -27,10 +29,10 @@ var game = {
         $("#results").css("display", "none");
         $("#question").empty();
 
-        var timer = $("<h1>");
-        $(timer).attr("id", "timer");
-        $(timer).text("Time - 00:00");
-        $("#question").append(timer);
+        // var timer = $("<h1>");
+        // $(timer).attr("id", "timer");
+        // $(timer).text("Time - 00:00");
+        // $("#question").append(timer);
 
         for(var i = 0; i < this.questions.length; i++) {
             var question = $("<div>");
@@ -60,7 +62,8 @@ var game = {
         $(submitButton).text("Submit Quiz");
         $("#question").append(submitButton);
         this.remainingTime = this.time;
-        var timerID = setInterval(decrement, 1000);
+        timerID = setInterval(decrement, 1000);
+        $("#timer").text("Time - 00:" + this.remainingTime);
 
         $("#submit").on("click", function() {
             for(var i = 0; i < game.questions.length; i++) {
@@ -115,8 +118,12 @@ function decrement() {
     }
 
     if(game.remainingTime === 0) {
+        clearInterval(timerID);
         $("#question").css("display", "none");
         $("#results").css("display", "block");
         $("#theResults").text("Time's up!");
+        $("#correct").text("N/A");
+        $("#incorrect").text("N/A");
+        $("#score").text("N/A");
     }
 }

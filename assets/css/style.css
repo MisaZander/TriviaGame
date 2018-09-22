@@ -4,7 +4,7 @@ body, html {
 }
 
 body {
-    background: url(../images/bg.jpg) no-repeat 0 0;
+    background: rebeccapurple url(../images/bg.jpg) no-repeat 0 0;
     background-size: cover;
     color: #ffffff;
 }
@@ -24,8 +24,20 @@ h1 {
     background-color: rgba(0, 0, 0, 0.30);
     padding: 30px;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 #question, #results {
     display: none;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    height: 50px;
 }
