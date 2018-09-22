@@ -5,31 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Potpourri Party!</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script type="text/javascript" src="assets/javascript/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js" defer></script>
 </head>
 <body>
     <div id="page">
-        <h1>Potpourri Party!</h1>
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Potpourri Party</h1>
+        </div>
         <div id="start">
-            <p>Welcome to the Potpourri Party! Answer the questions you're presented, but don't wait too long; each question has a set time. Click start to begin.</p>
-            <button onclick="showQuestions()">Start</button>
+            <p>Welcome to the Potpourri Party! Answer the questions you're presented, but hurry, you only have a limited amount of time to do the quiz</p>
+            <button type="button" class="btn btn-primary" onclick="showQuestions()">Start</button>
         </div>
         <div id="question">
-            <!-- <h2 id="title">Question</h2>
-            <h3 id="theQuestion">Q1: The Question</h3>
-            <h3 id="timer">Time: 00:15</h3>
-            <h3 id="choiceA">A: ?</h3>
-            <h3 id="choiceB">B: ?</h3>
-            <h3 id="choiceC">C: ?</h3>
-            <h3 id="choiceD">D: ?</h3> -->
+            
         </div>
         <div id="results">
-            <h2>The Results!</h2>
+            <h2 id="theResults">The Results!</h2>
             <p>Correct: <span id="correct">0</span></p>
             <p>Incorrect: <span id="incorrect">0</span></p>
             <p>Score: <span id="score">0%</span></p>
+            <button type="button" class="btn btn-success" onclick="resetGame()">Retry</button>
         </div>
     </div>
 </body>

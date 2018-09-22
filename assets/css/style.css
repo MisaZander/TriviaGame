@@ -3,10 +3,27 @@ body, html {
     width: 100%;
 }
 
+body {
+    background: url(../images/bg.jpg) no-repeat 0 0;
+    background-size: cover;
+    color: #ffffff;
+}
+
+h1 {
+    color: #000000;
+}
+
+#timer {
+    color: #ffffff;
+}
+
 #page {
     width: 900px;
     margin: 0 auto;
     position: relative;
+    background-color: rgba(0, 0, 0, 0.30);
+    padding: 30px;
+    overflow: hidden;
 }
 
 #question, #results {
