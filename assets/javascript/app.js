@@ -20,6 +20,16 @@ var game = {
             question: "When the game Team Fortress 2 came out, what was the first 'Meet The...' video to hit YouTube?",
             choices: ["Heavy", "Sniper", "Demoman", "Scout"],
             answer: 3
+        }, 
+        {
+            question: "What is the state capital of Rhode Island?",
+            choices: ["Providence", "Harrisburg", "Linclon", "Trenton"],
+            answer: 0
+        },
+        {
+            question: "The Walker Cup is competed for in which sport?",
+            choices: ["Basketball", "Soccer", "Golf", "Football"],
+            answer: 2
         }
     ],
 
